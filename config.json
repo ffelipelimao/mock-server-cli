@@ -1,0 +1,73 @@
+{
+    "port": "8080",
+    "requests": [
+        {
+            "verb": "GET",
+            "path": "/v2/awesome/example/{id}",
+            "responseType": "json",
+            "response": {
+                "Body": {
+                    "merchant": {
+                        "id":"19b58298-c473-4190-984c-9aca82bbd3a8",
+                        "name": "Exemplo Loja",
+                        "location": "São Paulo",
+                        "products": [
+                            {
+                                "product": {
+                                    "name": "Produto 1",
+                                    "price": 10.00
+                                }
+                            },
+                            {
+                                "product": {
+                                    "name": "Produto 2",
+                                    "price": 20.00
+                                }
+                            }
+                        ]
+                    }
+                },
+                "Rules": ["INVALID_UUID", "NOT_FOUND"]
+            }
+        },
+        {
+            "verb": "GET",
+            "path": "/v2/awesome/example/{id}/xml",
+            "responseType": "xml",
+            "response": {
+                "Body": "<merchant>\n  <id>19b58298-c473-4190-984c-9aca82bbd3a8</id>\n   <name>Exemplo Loja</name>\n    <location>São Paulo</location>\n    <products>\n        <product>\n            <name>Produto 1</name>\n            <price>10.00</price>\n        </product>\n        <product>\n            <name>Produto 2</name>\n            <price>20.00</price>\n        </product>\n    </products>\n</merchant>",
+                "Rules": ["INVALID_UUID", "NOT_FOUND"]
+            }
+        },
+        {
+            "verb": "POST",
+            "path": "/v2/awesome/example/body",
+            "bodyType": "json",
+            "body": {
+                "name": "Exemplo Loja",
+                "location": "São Paulo",
+                "products": [
+                    {
+                        "product": {
+                            "name": "Produto 1",
+                            "price": 10.00
+                        }
+                    },
+                    {
+                        "product": {
+                            "name": "Produto 2",
+                            "price": 20.00
+                        }
+                    }
+                ]
+            },
+            "responseType": "json",
+            "response": {
+                "Body": {
+                    "id":"19b58298-c473-4190-984c-9aca82bbd3a8"
+                },
+                "Rules": []
+            }
+        }
+    ]
+}
