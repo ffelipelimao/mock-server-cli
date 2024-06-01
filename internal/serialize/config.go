@@ -10,12 +10,10 @@ type Requests struct {
 	Path         string   `json:"path"`
 	ResponseType string   `json:"responseType"`
 	Response     Response `json:"response"`
-	Rules        []string `json:"rules,omitempty"`
 	BodyType     string   `json:"bodyType,omitempty"`
 	Body         any      `json:"body,omitempty"`
 }
 
 type Response struct {
-	Body  any      `json:"body"`
-	Rules []string `json:"rules"`
+	Body any `json:"body"`
 }
